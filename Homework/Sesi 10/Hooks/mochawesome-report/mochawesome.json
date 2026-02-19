@@ -1,0 +1,157 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-02-19T07:27:31.740Z",
+    "end": "2026-02-19T07:27:37.991Z",
+    "duration": 6251,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f3998adb-e96d-4bd4-b8d0-00c02d483424",
+      "title": "",
+      "fullFile": "C:\\Users\\fauzan\\Documents\\DigitalSkola\\Homework\\Sesi 10\\Hooks\\test.js",
+      "file": "\\test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fc274a30-20fc-4b31-9a1b-a49479d2e7dc",
+          "title": "SauceDemo Automation with Hooks",
+          "fullFile": "C:\\Users\\fauzan\\Documents\\DigitalSkola\\Homework\\Sesi 10\\Hooks\\test.js",
+          "file": "\\test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"SauceDemo Automation with Hooks\"",
+              "fullTitle": "SauceDemo Automation with Hooks \"before all\" hook in \"SauceDemo Automation with Hooks\"",
+              "timedOut": false,
+              "duration": 1259,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (browser === 'chrome') {\n    let options = new chrome.Options();\n    options.addArguments('--incognito');\n    driver = await new Builder()\n        .forBrowser('chrome')\n        .setChromeOptions(options)\n        .build();\n} else {\n    let options = new edge.Options();\n    driver = await new Builder()\n        .forBrowser('MicrosoftEdge')\n        .setEdgeOptions(options)\n        .build();\n}",
+              "err": {},
+              "uuid": "fd41ee7b-cd02-4196-9b4d-77ced54a938f",
+              "parentUUID": "fc274a30-20fc-4b31-9a1b-a49479d2e7dc",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"SauceDemo Automation with Hooks\"",
+              "fullTitle": "SauceDemo Automation with Hooks \"after all\" hook in \"SauceDemo Automation with Hooks\"",
+              "timedOut": false,
+              "duration": 176,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {},
+              "uuid": "b9c1cd4f-8621-4a60-8ffb-cab5ab8cfd6e",
+              "parentUUID": "fc274a30-20fc-4b31-9a1b-a49479d2e7dc",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Login ke SauceDemo",
+              "fullTitle": "SauceDemo Automation with Hooks Login ke SauceDemo",
+              "timedOut": false,
+              "duration": 1544,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.get('https://www.saucedemo.com');\nconst title = await driver.getTitle();\nassert.strictEqual(title, 'Swag Labs');\nawait driver.findElement(By.css('[data-test=\"username\"]'))\n    .sendKeys('standard_user');\nawait driver.findElement(By.css('[data-test=\"password\"]'))\n    .sendKeys('secret_sauce');\nawait driver.findElement(By.css('[data-test=\"login-button\"]'))\n    .click();\nlet cart = await driver.wait(\n    until.elementLocated(By.css('[data-test=\"shopping-cart-link\"]')),\n    10000\n);\nawait driver.wait(until.elementIsVisible(cart), 5000);",
+              "err": {},
+              "uuid": "ddf71196-0b6b-4507-9b1b-d8db7ff3bd93",
+              "parentUUID": "fc274a30-20fc-4b31-9a1b-a49479d2e7dc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Sort produk berdasarkan harga tertinggi",
+              "fullTitle": "SauceDemo Automation with Hooks Sort produk berdasarkan harga tertinggi",
+              "timedOut": false,
+              "duration": 3260,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let dropdown = await driver.findElement(\n    By.css('[data-test=\"product-sort-container\"]')\n);\nawait dropdown.click();\nlet option = await driver.findElement(\n    By.xpath('//option[text()=\"Price (high to low)\"]')\n);\nawait option.click();\nawait driver.sleep(3000);",
+              "err": {},
+              "uuid": "f5e78478-cae3-40ad-af2f-81ef17835dd1",
+              "parentUUID": "fc274a30-20fc-4b31-9a1b-a49479d2e7dc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ddf71196-0b6b-4507-9b1b-d8db7ff3bd93",
+            "f5e78478-cae3-40ad-af2f-81ef17835dd1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4804,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 60000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.8.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.3.2"
+    }
+  }
+}
